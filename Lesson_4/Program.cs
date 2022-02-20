@@ -3,7 +3,6 @@
 using ClassNEW;         // all functions starts from 180 line
 
 
-
 // Задача 26: Возведите число А в натуральную степень B, используя цикл.
 Console.WriteLine("\nTask #1. \nanalog for Math.Pow function");
 Console.WriteLine(Class_C.Get_Exp());        //  print information
