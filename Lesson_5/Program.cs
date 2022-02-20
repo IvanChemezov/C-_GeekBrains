@@ -4,7 +4,7 @@ using ClassNEW;         // all functions starts from 180 line
 
 
 Console.WriteLine("Please enter length of array for all tasks");
-int arrayLenght = int.Parse(Console.ReadLine());                    //  arrays will be different, nut length will be the same
+int arrayLenght = int.Parse(Console.ReadLine());                    //  arrays will be different, but length will be the same
 
 
 //  Задача 34: Написать программу для замены элементов массива на противоположные.

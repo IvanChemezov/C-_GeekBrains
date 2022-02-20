@@ -13,11 +13,11 @@ public class Class_C
             Console.Write($"{element}\t");
         }
         Console.WriteLine();
-
+        int[] arrayOpposite = new int[arrayLenght];
         for(int i = 0; i < arrayOriginal.Length; i++)                   //  Show reversed numbers
         {
-            arrayOriginal[i] = 0 - arrayOriginal[i];
-            Console.Write($"{arrayOriginal[i]}\t");
+            arrayOpposite[i] = arrayOriginal[arrayLenght - i - 1];
+            Console.Write($"{arrayOpposite[i]}\t");
         }    
         Console.WriteLine();
     }
