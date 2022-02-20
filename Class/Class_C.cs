@@ -65,9 +65,13 @@ public class Class_C
     ///<summery>
     public static void DifferenceInArrayMaxMin(int arrayLenght)
     {
-        int[] new_array = new int[arrayLenght].Select(x => new Random().Next(-100, 100)).ToArray();
-        int min_value = new_array[0];
-        int max_value = new_array[0];
+        float[] new_array = new float[arrayLenght];
+        for(int i = 0; i < arrayLenght; i++)
+        {
+            new_array[i] = float.Parse(new Random().Next(-100,100).ToString() + new Random().NextDouble().ToString());      //  get some randoms numbers
+        }
+        float min_value = new_array[0];
+        float max_value = new_array[0];
         for(int i = 0; i < arrayLenght; i++)
         {
             if(min_value > new_array[i]) min_value = new_array[i];
@@ -88,7 +92,7 @@ public class Class_C
 
 
 
-    
+
     /*
     ///<summary>
     ///example of class from lesson
