@@ -1,81 +1,189 @@
 ﻿namespace ClassNEW;
 public class Class_C
 {
-    
+    ///<summary>
+    /// SW for task # 49
+    ///<summery>
+    public static void Show_Random_Double_Array(int lenght_array, int deep_array)
+    {
+        string[,] first_array = new string[lenght_array, deep_array];
+        for (int i = 0; i < lenght_array; i++)
+        {
+            for (int j = 0; j < deep_array; j++)
+            {
+                first_array[i, j] = new Random().Next(-10, 10).ToString() + new Random().NextDouble();
+                Console.Write($"{first_array[i, j]},\t");
+            }
+            Console.WriteLine();
+        }
+    }
+
+
+    ///<summary>
+    /// SW for task # 53
+    ///<summery>
+    public static void Show_User_Number(int lenght, int depth)
+    {
+        double[,] array_double = new double[depth, lenght];
+        for (int i = 0; i < depth; i++)
+        {
+            for (int j = 0; j < lenght; j++)
+            {
+                array_double[i, j] = new Random().Next(0, 100);
+                Console.Write($"{array_double[i, j]},\t");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine("\nPlease enter X position");
+        int X_coordinate = int.Parse(Console.ReadLine());
+        Console.WriteLine("\nPlease enter Y position");
+        int Y_coordinate = int.Parse(Console.ReadLine());
+        if ((X_coordinate > lenght) | (Y_coordinate > depth))
+        {
+            Console.WriteLine("\nError 404.\nThere is not a number with usre's parameters.\nPlesae restart the code");
+        }
+        else
+        {
+            Console.WriteLine($"User's number is {array_double[Y_coordinate - 1, X_coordinate - 1]}");
+        }
+
+    }
+
+
+    ///<summary>
+    /// SW for task # 55
+    ///<summery>
+    public static void Find_Average(int lenght, int depth)
+    {
+        double[,] array_double = new double[depth, lenght];
+
+        for (int i = 0; i < lenght; i++)
+        {
+            for (int j = 0; j < depth; j++)
+            {
+                array_double[j, i] = new Random().Next(-100, 100);
+                Console.Write($"{array_double[j, i]},\t");
+            }
+            Console.WriteLine();
+        }
+
+        for (int i = 0; i < depth; i++)
+        {
+            double average = 0;
+            for (int j = 0; j < lenght; j++)
+            {
+                average += array_double[i, j] / lenght;
+            }
+            Console.Write($"\ncollum {i}, average = {average},\t");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     ///<summary>
     /// SW for task # 42
     ///<summery>
     public static void CountNumbersInArray()
-    {   
+    {
         int count = 0;
         string answer;
         do
         {
             Console.WriteLine("Please enter the text");
             string arrayNumbers = Console.ReadLine();
-            for(int i = 0; i < arrayNumbers.Length; i++)
+            for (int i = 0; i < arrayNumbers.Length; i++)
             {
-                if((arrayNumbers[i] > 48) & (arrayNumbers[i] < 58)) count++;
+                if ((arrayNumbers[i] > 48) & (arrayNumbers[i] < 58)) count++;
             }
             Console.WriteLine("Do you want to continue? Yes or No");
             answer = Console.ReadLine();
         }
-        while((answer == "Yes") | (answer == "yes"));
+        while ((answer == "Yes") | (answer == "yes"));
         Console.WriteLine(count);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     ///<summary>
     /// SW for task # 34
     ///<summery>
     public static void ReversArray(int arrayLenght)
-    {   
+    {
         int[] arrayOriginal = new int[arrayLenght].Select(x => new Random().Next(-100, 100)).ToArray();     //  Fill array with randoms numbers
 
-        foreach(int element in arrayOriginal)                           //  Show original numbers
+        foreach (int element in arrayOriginal)                           //  Show original numbers
         {
             Console.Write($"{element}\t");
         }
         Console.WriteLine();
         int[] arrayOpposite = new int[arrayLenght];
-        for(int i = 0; i < arrayOriginal.Length; i++)                   //  Show reversed numbers
+        for (int i = 0; i < arrayOriginal.Length; i++)                   //  Show reversed numbers
         {
             arrayOpposite[i] = arrayOriginal[arrayLenght - i - 1];
             Console.Write($"{arrayOpposite[i]}\t");
-        }    
+        }
         Console.WriteLine();
     }
 
@@ -84,20 +192,20 @@ public class Class_C
     ///<summery>
     public static void CountOddAndEvenInArray(int arrayLenght)
     {
-    int[] new_array = new int[arrayLenght].Select(x => new Random().Next(100, 1000)).ToArray();     //  fill array with numbers from 100 to 999
-    int evenCount = 0;
-    int oddCount = 0;
-    for(int i = 0; i < arrayLenght; i++)
-    {
-        if(new_array[i] % 2 == 0) evenCount++;
-        else
+        int[] new_array = new int[arrayLenght].Select(x => new Random().Next(100, 1000)).ToArray();     //  fill array with numbers from 100 to 999
+        int evenCount = 0;
+        int oddCount = 0;
+        for (int i = 0; i < arrayLenght; i++)
         {
-            oddCount++;
+            if (new_array[i] % 2 == 0) evenCount++;
+            else
+            {
+                oddCount++;
+            }
+            Console.Write($"{new_array[i]}\t");
         }
-        Console.Write($"{new_array[i]}\t");    
-    }
-    Console.WriteLine($"\nThere are {oddCount} odd numbers in array");
-    Console.WriteLine($"There are {evenCount} even numbers in array");
+        Console.WriteLine($"\nThere are {oddCount} odd numbers in array");
+        Console.WriteLine($"There are {evenCount} even numbers in array");
     }
 
 
@@ -108,10 +216,10 @@ public class Class_C
     {
         int[] new_array = new int[arrayLenght].Select(x => new Random().Next(0, 1000)).ToArray();
         int sum = 0;
-        for(int i = 1; i < arrayLenght; i++)
+        for (int i = 1; i < arrayLenght; i++)
         {
             sum += new_array[i];
-            Console.Write($"{new_array[i]}\t");    
+            Console.Write($"{new_array[i]}\t");
             i++;
         }
         Console.WriteLine($"\n{sum} is a sum of all odd numbers in array");
@@ -123,16 +231,16 @@ public class Class_C
     public static void DifferenceInArrayMaxMin(int arrayLenght)
     {
         float[] new_array = new float[arrayLenght];
-        for(int i = 0; i < arrayLenght; i++)
+        for (int i = 0; i < arrayLenght; i++)
         {
-            new_array[i] = float.Parse(new Random().Next(-100,100).ToString() + new Random().NextDouble().ToString());      //  get some randoms numbers
+            new_array[i] = float.Parse(new Random().Next(-100, 100).ToString() + new Random().NextDouble().ToString());      //  get some randoms numbers
         }
         float min_value = new_array[0];
         float max_value = new_array[0];
-        for(int i = 0; i < arrayLenght; i++)
+        for (int i = 0; i < arrayLenght; i++)
         {
-            if(min_value > new_array[i]) min_value = new_array[i];
-            if(max_value < new_array[i]) max_value = new_array[i];
+            if (min_value > new_array[i]) min_value = new_array[i];
+            if (max_value < new_array[i]) max_value = new_array[i];
         }
         Console.WriteLine($"maximum value in array = {max_value}");
         Console.WriteLine($"minimum value in array = {min_value}");

@@ -3,7 +3,7 @@
 using ClassNEW;         // all functions starts from 180 line
 using System;
 using System.Linq;
-
+/*
 //  Задача 42: Определить, сколько чисел больше 0 введено с клавиатуры.
 Console.WriteLine("\nTask #1. \ncount numbers in array");
 Class_C.CountNumbersInArray();
@@ -30,7 +30,7 @@ Console.WriteLine($"For second equation point coordinates: \nx = {answer} \ny = 
 2. Коэффициент масштабирования k задавался отдельно — 2 или 4 или 0.5.
 3. В результате были выводились полученные координаты.
 При k = 2 получаем "(0,0) (4,0) (4,4) (0,4)"*/
-
+/*
 Console.WriteLine("\nEnter the coefficient of changing coordinates (chenge lenght between (0,0) and all points)");
 string kExpend = Console.ReadLine();
 string text = "(1,2) (3,4) (5,6) (10,2) (15,6)";
@@ -57,3 +57,4 @@ for(int i = 0; i < data.Length; i++)
     }
 }
 
+*/
