@@ -1,6 +1,63 @@
 ﻿namespace ClassNEW;
 public class Class_C
 {
+    
+    ///<summary>
+    /// SW for task # 42
+    ///<summery>
+    public static void CountNumbersInArray()
+    {   
+        int count = 0;
+        string answer;
+        do
+        {
+            Console.WriteLine("Please enter the text");
+            string arrayNumbers = Console.ReadLine();
+            for(int i = 0; i < arrayNumbers.Length; i++)
+            {
+                if((arrayNumbers[i] > 48) & (arrayNumbers[i] < 58)) count++;
+            }
+            Console.WriteLine("Do you want to continue? Yes or No");
+            answer = Console.ReadLine();
+        }
+        while((answer == "Yes") | (answer == "yes"));
+        Console.WriteLine(count);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     ///<summary>
     /// SW for task # 34
     ///<summery>
